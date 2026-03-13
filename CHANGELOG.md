@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to **AWS CLI Configure for Cursor** are documented here.
+All notable changes to **AWS CLI Configure** are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-01-01
 
 ### Added
-- Initial release as a Cursor IDE extension.
+- Initial release as a VS Code-compatible extension.
 - Status bar item showing the currently active AWS profile.
 - Command: Open `~/.aws/credentials` file.
 - Command: Open `~/.aws/config` file.
@@ -27,9 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced `aws-profile-handler` (git dependency) with `ini` for direct credentials file parsing.
 - Replaced `uniqid` with `Date.now()` timestamp for backup profile naming.
 - Fixed a missing closing brace bug in `setDefaultProfileToCredentials`.
-- Updated `activationEvents` to `onStartupFinished` (modern VS Code / Cursor API).
+- Updated `activationEvents` to `onStartupFinished` (modern VS Code API).
 - Bumped minimum engine version to VS Code 1.80.0.
 - Added a file system watcher using `createFileSystemWatcher` instead of `onDidSaveTextDocument`.
 
 ### Security
-- No longer installs native add-ons (`copy-paste` required platform binaries). All clipboard and browser operations use the Cursor/VS Code built-in APIs.
+- No longer installs native add-ons (`copy-paste` required platform binaries). All clipboard and browser operations use the VS Code built-in APIs.

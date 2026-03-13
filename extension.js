@@ -1,4 +1,4 @@
-// AWS CLI Configure for Cursor
+// AWS CLI Configure
 // Adapted from https://github.com/rmtuckerphx/aws-cli-configure (MIT License)
 // Original author: Mark Tucker (@rmtuckerphx)
 

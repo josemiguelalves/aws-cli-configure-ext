@@ -3,8 +3,8 @@ const path = require('path');
 const os = require('os');
 const { parseIni, stringifyIni, profilesEqual } = require('../helpers');
 
-// Basic unit tests for the AWS CLI Configure for Cursor extension.
-// These tests run without a full VS Code / Cursor environment.
+// Basic unit tests for the AWS CLI Configure extension.
+// These tests run without a full VS Code environment.
 
 suite('Extension Unit Tests', () => {
 

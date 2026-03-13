@@ -1,8 +1,8 @@
-# AWS CLI Configure for Cursor
+# AWS CLI Configure
 
-A [Cursor IDE](https://cursor.com) extension that lets you quickly open your AWS CLI credentials and config files, and switch your active AWS profile directly from the editor — no terminal required.
+A VS Code-compatible extension that lets you quickly open your AWS CLI credentials and config files, and switch your active AWS profile directly from the editor — no terminal required.
 
-This is an open-source adaptation of the original [aws-cli-configure](https://github.com/rmtuckerphx/aws-cli-configure) VS Code extension by [Mark Tucker](https://github.com/rmtuckerphx), updated and modernised to work natively with Cursor.
+This is an open-source adaptation of the original [aws-cli-configure](https://github.com/rmtuckerphx/aws-cli-configure) VS Code extension by [Mark Tucker](https://github.com/rmtuckerphx), updated and modernised to work with modern VS Code-compatible editors.
 
 ---
 
@@ -59,21 +59,21 @@ The extension reads `~/.aws/credentials` directly using the INI format. When you
 
 ## Requirements
 
-- [Cursor IDE](https://cursor.com) (or VS Code 1.80+)
+- [VS Code](https://code.visualstudio.com/) 1.80+ (or any compatible editor such as [Cursor](https://cursor.com), [VSCodium](https://vscodium.com/), etc.)
 - [AWS CLI](https://aws.amazon.com/cli/) installed and configured (`~/.aws/credentials` present)
 
 ---
 
 ## Installation
 
-### From the Cursor Extension Marketplace
+### From the Open VSX Registry
 
-Search for **"AWS CLI Configure for Cursor"** in the Cursor Extensions panel and install.
+Search for **"AWS CLI Configure"** in your editor's Extensions panel and install.
 
 ### Manual VSIX install
 
 1. Download the latest `.vsix` from the [Releases](https://github.com/josemiguelalves/cursor-aws-cli-configure/releases) page.
-2. In Cursor, open the Command Palette and run **"Extensions: Install from VSIX..."**.
+2. In your editor, open the Command Palette and run **"Extensions: Install from VSIX..."**.
 3. Select the downloaded `.vsix` file.
 
 ### Build from source
@@ -83,7 +83,7 @@ git clone https://github.com/josemiguelalves/cursor-aws-cli-configure.git
 cd cursor-aws-cli-configure
 npm install
 npm run package        # produces cursor-aws-cli-configure-x.x.x.vsix
-# Install the generated .vsix in Cursor via "Extensions: Install from VSIX..."
+# Install the generated .vsix via "Extensions: Install from VSIX..."
 ```
 
 ---
@@ -137,7 +137,7 @@ Please follow the existing code style and add tests where appropriate.
 ## Credits
 
 - Original VS Code extension: [aws-cli-configure](https://github.com/rmtuckerphx/aws-cli-configure) by [Mark Tucker](https://github.com/rmtuckerphx) — MIT License
-- Cursor extension: [Jose Miguel Alves](https://github.com/josemiguelalves)
+- This adaptation: [Jose Miguel Alves](https://github.com/josemiguelalves)
 
 ---
 

@@ -1,6 +1,6 @@
-// Test runner for the AWS CLI Configure for Cursor extension.
+// Test runner for the AWS CLI Configure extension.
 // Runs pure-Node unit tests (test/extension.test.js) without launching
-// a full Cursor / VS Code host, keeping CI fast and dependency-free.
+// a full VS Code host, keeping CI fast and dependency-free.
 const Mocha = require('mocha');
 const path  = require('path');
 const fs    = require('fs');
