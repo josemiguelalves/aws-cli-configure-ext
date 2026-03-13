@@ -1,5 +1,5 @@
 {
-  "name": "cursor-aws-cli-configure",
+  "name": "aws-cli-configure",
   "displayName": "AWS CLI Configure for Cursor",
   "description": "Quickly access the AWS CLI config & credentials files and set any named profile as the [default] profile. Adapted for Cursor IDE.",
   "version": "1.0.1",

@@ -170,20 +170,21 @@ function getTooltipMessage() {
     }
 }
 
+// ─── Active profile resolution ────────────────────────────────────────────────
+
+function getActiveProfile() {
+    return process.env.AWS_PROFILE || process.env.AWS_DEFAULT_PROFILE || 'default';
+}
+
 // ─── Status bar ───────────────────────────────────────────────────────────────
 
 function updateStatus() {
     if (!statusBar) return;
 
-    const text = getDefaultProfileSetTo();
-
-    if (text) {
-        statusBar.text = '$(terminal) AWS: ' + text;
-        statusBar.tooltip = getTooltipMessage();
-        statusBar.show();
-    } else {
-        statusBar.hide();
-    }
+    const active = getActiveProfile();
+    statusBar.text = '$(terminal) AWS: ' + active;
+    statusBar.tooltip = `Active AWS profile: ${active}`;
+    statusBar.show();
 }
 
 function showDefaultProfileMapCredentials() {
@@ -256,6 +257,7 @@ async function copyProfileNameCredentials() {
 
 function activate(context) {
     statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+    statusBar.name = 'AWS CLI Configure';
     statusBar.command = 'aws-cli.set-default-profile.credentials';
     context.subscriptions.push(statusBar);
     updateStatus();
