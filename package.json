@@ -2,7 +2,7 @@
   "name": "cursor-aws-cli-configure",
   "displayName": "AWS CLI Configure for Cursor",
   "description": "Quickly access the AWS CLI config & credentials files and set any named profile as the [default] profile. Adapted for Cursor IDE.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "josemiguelalves",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -72,9 +72,9 @@
   "scripts": {
     "lint": "eslint .",
     "test": "node ./test/runTest.js",
-    "package": "vsce package --no-dependencies",
-    "publish:vsce": "vsce publish --no-dependencies",
-    "publish:ovsx": "ovsx publish --no-dependencies",
+    "package": "vsce package",
+    "publish:vsce": "vsce publish",
+    "publish:ovsx": "ovsx publish",
     "publish": "npm run publish:ovsx"
   },
   "devDependencies": {
@@ -83,9 +83,5 @@
     "eslint": "^8.45.0",
     "mocha": "^10.2.0",
     "ovsx": "^0.9.1"
-  },
-  "dependencies": {
-    "ini": "^4.1.1",
-    "object-hash": "^3.0.0"
   }
 }

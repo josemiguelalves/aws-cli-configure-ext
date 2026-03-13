@@ -6,8 +6,7 @@ const vscode = require('vscode');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
-const ini = require('ini');
-const hash = require('object-hash');
+const { parseIni, stringifyIni, profilesEqual } = require('./helpers');
 
 const DEFAULT_PROFILE = 'default';
 let statusBar;
@@ -61,7 +60,7 @@ function readCredentialsFile() {
     }
     try {
         const content = fs.readFileSync(filePath, 'utf8');
-        return ini.parse(content);
+        return parseIni(content);
     } catch (error) {
         console.error('Failed to parse credentials file:', error);
         return null;
@@ -70,7 +69,7 @@ function readCredentialsFile() {
 
 function writeCredentialsFile(data) {
     const filePath = getCredentialsFilePath();
-    fs.writeFileSync(filePath, ini.stringify(data), 'utf8');
+    fs.writeFileSync(filePath, stringifyIni(data), 'utf8');
 }
 
 function listProfiles() {
@@ -89,7 +88,7 @@ function addProfile(name, data) {
     const filePath = getCredentialsFilePath();
     let credentials = {};
     if (fs.existsSync(filePath)) {
-        credentials = ini.parse(fs.readFileSync(filePath, 'utf8'));
+        credentials = parseIni(fs.readFileSync(filePath, 'utf8'));
     }
     credentials[name] = data;
     writeCredentialsFile(credentials);
@@ -98,7 +97,7 @@ function addProfile(name, data) {
 function deleteProfile(name) {
     const filePath = getCredentialsFilePath();
     if (!fs.existsSync(filePath)) return;
-    const credentials = ini.parse(fs.readFileSync(filePath, 'utf8'));
+    const credentials = parseIni(fs.readFileSync(filePath, 'utf8'));
     delete credentials[name];
     writeCredentialsFile(credentials);
 }
@@ -147,7 +146,7 @@ function getDefaultProfileSetTo() {
             profiles.forEach(profile => {
                 if (profile !== DEFAULT_PROFILE) {
                     const candidateProfile = getProfileCredentials(profile);
-                    if (hash(defaultProfile) === hash(candidateProfile)) {
+                    if (profilesEqual(defaultProfile, candidateProfile)) {
                         text = profile;
                     }
                 }
