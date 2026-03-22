@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2025-03-13
+
+### Changed
+- **BREAKING**: Renamed extension ID from `cursor-aws-cli-configure` to `aws-cli-configure-ext` for better marketplace discoverability. Existing installs under the old ID will not receive automatic updates — please install the new listing.
+- Cleaned up keywords for improved search relevance on Open VSX.
+
+---
+
 ## [1.0.0] - 2024-01-01
 
 ### Added

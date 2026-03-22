@@ -82,7 +82,7 @@ Search for **"AWS CLI Configure"** in your editor's Extensions panel and install
 git clone https://github.com/josemiguelalves/cursor-aws-cli-configure.git
 cd cursor-aws-cli-configure
 npm install
-npm run package        # produces cursor-aws-cli-configure-x.x.x.vsix
+npm run package        # produces aws-cli-configure-ext-x.x.x.vsix
 # Install the generated .vsix via "Extensions: Install from VSIX..."
 ```
 
